@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using StayHealthy.Client.ApiClients;
 using StayHealthy.Client.Settings;
@@ -22,8 +21,6 @@ public static class DependencyInjectionExtension
             var routing = serviceProvider.GetRequiredService<IOptions<SlotsClientSettings>>().Value;
             client.BaseAddress = new Uri(routing.BaseUrl);
         });
-        
-        services.AddLogging(c => c.AddConsole());
         
         return services;
     }

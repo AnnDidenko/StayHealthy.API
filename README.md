@@ -16,7 +16,7 @@ dotnet build
 
 # Run the project
 dotnet run --project StayHealthy.Api/StayHealthy.Api.csproj
-~~~~
+
 # Run the tests
 dotnet test
 ```

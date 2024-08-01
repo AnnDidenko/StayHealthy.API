@@ -15,6 +15,8 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddCors();
 
+builder.Services.AddLogging(c => c.AddConsole());
+
 var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "StayHealthy.Api v1"));
@@ -28,8 +30,5 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
+app.MapControllers();
 app.Run();
